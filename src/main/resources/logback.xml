@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <jmxConfigurator />
+
+    <property name="log.base" value="logs" />
+    <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度  %msg表示日志消息，%n表示换行符-->  
+	<property name="pattern"  value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{80} :%msg%n" />
+	
+	<appender name="ROOT_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.base}/spring-root.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+            	${log.base}/%d{yyyy-MM-dd}/spring-root-%i.%d{yyyy-MM-dd}.log.gz
+            </fileNamePattern>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>30MB</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="com.somnus" level="info" />
+
+	<!-- 上线初期建议lever=info，正常运行后建以lever=error,测试时lever=error-->
+    <logger name="org.jdbcdslog.ConnectionLogger" level="info" />
+    <logger name="org.jdbcdslog.StatementLogger" level="info" />
+    <logger name="org.jdbcdslog.SlowQueryLogger" level="info" />
+    <logger name="org.jdbcdslog.ResultSetLogger" level="info" />
+    <logger name="org.springframework" level="info" />
+	
+	<!-- root级别控制 -->
+	<root level="info">
+		<appender-ref ref="ROOT_FILE" />
+	</root>
+</configuration>
