@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.somnus.mybatis.dao.MerAccountDao" >
-  <resultMap id="BaseResultMap" type="com.somnus.mybatis.domain.MerAccount" >
+<mapper namespace="com.somnus.dao.MerAccountDao" >
+  <resultMap id="BaseResultMap" type="com.somnus.model.MerAccount" >
     <id column="ACCT_ID" property="acctId" jdbcType="INTEGER" />
     <result column="ACCT_CODE" property="acctCode" jdbcType="VARCHAR" />
     <result column="MER_CODE" property="merCode" jdbcType="VARCHAR" />
@@ -93,7 +93,7 @@
     where ACCT_ID = #{acctId,jdbcType=INTEGER}
   </delete>
   
-  <insert id="insert" parameterType="com.somnus.mybatis.domain.MerAccount" >
+  <insert id="insert" parameterType="com.somnus.model.MerAccount" >
     insert into tcim_mer_account (ACCT_ID, ACCT_CODE, MER_CODE, 
       ACCT_NAME, CURRENCY, BANK_CODE, 
       BANK_NAME, BANK_KEY, BRANCH_CODE, 
@@ -117,7 +117,7 @@
       #{effectDate,jdbcType=VARCHAR}, #{loseEffectDate,jdbcType=VARCHAR}, #{modifyBy,jdbcType=VARCHAR}, 
       #{modifyTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.somnus.mybatis.domain.MerAccount" >
+  <insert id="insertSelective" parameterType="com.somnus.model.MerAccount" >
     insert into tcim_mer_account
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="acctId != null" >
@@ -311,7 +311,7 @@
     </trim>
   </insert>
   
-  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.mybatis.domain.MerAccount" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.somnus.model.MerAccount" >
     update tcim_mer_account
     <set >
       <if test="acctCode != null" >
@@ -407,7 +407,7 @@
     </set>
     where ACCT_ID = #{acctId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.somnus.mybatis.domain.MerAccount" >
+  <update id="updateByPrimaryKey" parameterType="com.somnus.model.MerAccount" >
     update tcim_mer_account
     set ACCT_CODE = #{acctCode,jdbcType=VARCHAR},
       MER_CODE = #{merCode,jdbcType=VARCHAR},
