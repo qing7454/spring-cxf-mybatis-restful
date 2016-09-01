@@ -1,4 +1,4 @@
-package com.somnus.resource;
+package com.somnus.rs;
 
 import com.somnus.model.MerAccount;
 

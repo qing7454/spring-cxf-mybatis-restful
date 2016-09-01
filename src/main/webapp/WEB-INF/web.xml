@@ -54,7 +54,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>cxfService</servlet-name>
-		<url-pattern>/ws/*</url-pattern>
+		<url-pattern>/cxf/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
