@@ -18,9 +18,12 @@
 	<jaxws:endpoint implementor="com.somnus.ws.impl.MerAccountResourceImpl" address="/webservice" />
 	
 	<jaxrs:server id="restUserService" address="/restful">  
-        <jaxrs:serviceBeans>  
-            <ref bean="merAccountResourceImpl" />  
-        </jaxrs:serviceBeans>  
+        <jaxrs:serviceBeans>
+            <ref bean="merAccountResourceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>  
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />  
+        </jaxrs:providers>  
     </jaxrs:server>  
 
 </beans>

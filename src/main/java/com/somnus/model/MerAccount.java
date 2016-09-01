@@ -3,6 +3,9 @@ package com.somnus.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class MerAccount {
     private Integer acctId;
 
