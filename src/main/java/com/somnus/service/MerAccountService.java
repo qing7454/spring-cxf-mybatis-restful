@@ -8,7 +8,7 @@ public interface MerAccountService {
 	/**
 	 * 根据商户号和交易商户号查询交易账户
 	 * */
-	MerAccount selectByConstraints(MerAccount meraccount);
+	MerAccount selectByCondition(MerAccount meraccount);
 	
 	/**
 	 * 根据交易账户号查询交易账户

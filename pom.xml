@@ -36,6 +36,8 @@
 		<mybatis.paginator.version>1.2.17</mybatis.paginator.version>
 		<!-- cxf -->
 		<cxf.version>2.7.7</cxf.version>
+		<!-- jackson -->
+		<jackson.version>2.2.3</jackson.version>
 	</properties>
 	<!-- 指定Maven仓库 -->
 	<repositories>
@@ -215,6 +217,13 @@
 			<groupId>org.apache.cxf</groupId> 
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId> 
 			<version>${cxf.version}</version> 
+		</dependency>
+		
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 		
 	</dependencies>

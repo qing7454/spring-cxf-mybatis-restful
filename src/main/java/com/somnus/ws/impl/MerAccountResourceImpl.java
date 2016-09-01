@@ -14,8 +14,9 @@ public class MerAccountResourceImpl implements MerAccountResource{
 	@Autowired
 	private MerAccountService merAccountService;
 
-	public MerAccount selectByConstraints(MerAccount meraccount) {
-		return merAccountService.selectByConstraints(meraccount);
+	@Override
+	public MerAccount selectByCondition(MerAccount meraccount) {
+		return merAccountService.selectByCondition(meraccount);
 	}
 
 }

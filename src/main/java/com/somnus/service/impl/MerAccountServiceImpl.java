@@ -16,8 +16,8 @@ public class MerAccountServiceImpl implements MerAccountService{
 	private MerAccountDao merAccountDao;
 
 	@Override
-	public MerAccount selectByConstraints(MerAccount meraccount) {
-		return merAccountDao.selectByConstraints(meraccount);
+	public MerAccount selectByCondition(MerAccount meraccount) {
+		return merAccountDao.selectByCondition(meraccount);
 	}
 
 	@Override

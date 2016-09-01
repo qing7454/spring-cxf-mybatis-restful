@@ -6,5 +6,5 @@ import com.somnus.model.MerAccount;
 
 @WebService
 public interface MerAccountResource {
-	MerAccount selectByConstraints(MerAccount meraccount);
+	MerAccount selectByCondition(MerAccount meraccount);
 }

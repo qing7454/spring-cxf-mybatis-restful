@@ -20,13 +20,13 @@ public class MerAccountResourceImpl implements MerAccountResource{
 	@Autowired
 	private MerAccountService merAccountService;
 
-	@Path("/selectByConstraints")
+	@Path("/selectByCondition")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Override
-	public MerAccount selectByConstraints(MerAccount meraccount) {
-		return merAccountService.selectByConstraints(meraccount);
+	public MerAccount selectByCondition(MerAccount meraccount) {
+		return merAccountService.selectByCondition(meraccount);
 	}
 
 }
